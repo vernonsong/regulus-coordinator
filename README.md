@@ -1,2 +1,2 @@
 # regulus-coordinator
-通知、控制和监控服务
+量化交易辅助服务

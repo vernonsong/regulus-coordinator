@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.infrastructure.repository.mapper.StockPricesDailyDoMapper">
+
+    <resultMap id="BaseResultMap" type="com.regulus.infrastructure.persistence.StockPriceDailyDo">
+        <id property="stockCode" column="stock_code"/>
+        <id property="tradeDate" column="trade_date"/>
+        <result property="open" column="open"/>
+        <result property="close" column="close"/>
+        <result property="high" column="high"/>
+        <result property="low" column="low"/>
+        <result property="volume" column="volume"/>
+        <result property="money" column="money"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        stock_code
+        ,trade_date,open,close,high,low,
+        volume,money
+    </sql>
+</mapper>
