@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: spotless
+        name: Spotless Java Formatting
+        entry: mvn spotless:apply
+        language: system
+        pass_filenames: false

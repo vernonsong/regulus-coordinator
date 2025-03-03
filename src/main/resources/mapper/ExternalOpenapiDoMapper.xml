@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.infrastructure.repository.mapper.ExternalOpenapiDoMapper">
+
+    <resultMap id="BaseResultMap" type="com.regulus.infrastructure.persistence.ExternalOpenapiDo">
+            <id property="id" column="id" />
+            <result property="serviceName" column="service_name" />
+            <result property="apiName" column="api_name" />
+            <result property="apiUrl" column="api_url" />
+            <result property="status" column="status" />
+            <result property="extraConfig" column="extra_config" />
+            <result property="createTime" column="create_time" />
+            <result property="updateTime" column="update_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,service_name,api_name,api_url,status,extra_config,
+        create_time,update_time
+    </sql>
+</mapper>

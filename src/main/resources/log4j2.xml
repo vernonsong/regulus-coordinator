@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <!-- 定义日志输出格式 -->
+    <Properties>
+        <Property name="LOG_PATTERN">%d [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="FILE_PATH">logs</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 定义输出 INFO 级别日志的文件 Appender -->
+        <RollingFile name="InfoFile" fileName="logs/info.log" filePattern="logs/info-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <Filters>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </RollingFile>
+
+        <!-- 定义输出 WARN 级别日志的文件 Appender -->
+        <RollingFile name="WarnFile" fileName="logs/warn.log" filePattern="logs/warn-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </RollingFile>
+
+        <!-- 定义输出 ERROR 级别日志的文件 Appender -->
+        <RollingFile name="ErrorFile" fileName="logs/error.log" filePattern="logs/error-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </RollingFile>
+
+        <!-- 定义控制台输出 Appender（仅供调试用，可选） -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.regulus" level="info" additivity="false">
+            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="WarnFile"/>
+            <AppenderRef ref="ErrorFile"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <!-- Root Logger -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
