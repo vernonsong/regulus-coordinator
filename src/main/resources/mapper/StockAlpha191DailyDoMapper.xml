@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.infrastructure.repository.mapper.StockAlpha191DailyDoMapper">
+
+    <resultMap id="BaseResultMap" type="com.regulus.infrastructure.persistence.StockAlpha191DailyDo">
+            <id property="stockCode" column="stock_code" />
+            <id property="tradeDate" column="trade_date" />
+            <result property="alpha001" column="alpha_001" />
+            <result property="alpha002" column="alpha_002" />
+            <result property="alpha003" column="alpha_003" />
+            <result property="alpha004" column="alpha_004" />
+            <result property="alpha005" column="alpha_005" />
+            <result property="alpha006" column="alpha_006" />
+            <result property="alpha007" column="alpha_007" />
+            <result property="alpha008" column="alpha_008" />
+            <result property="alpha009" column="alpha_009" />
+            <result property="alpha010" column="alpha_010" />
+            <result property="alpha011" column="alpha_011" />
+            <result property="alpha012" column="alpha_012" />
+            <result property="alpha013" column="alpha_013" />
+            <result property="alpha014" column="alpha_014" />
+            <result property="alpha015" column="alpha_015" />
+            <result property="alpha016" column="alpha_016" />
+            <result property="alpha017" column="alpha_017" />
+            <result property="alpha018" column="alpha_018" />
+            <result property="alpha019" column="alpha_019" />
+            <result property="alpha020" column="alpha_020" />
+            <result property="alpha021" column="alpha_021" />
+            <result property="alpha022" column="alpha_022" />
+            <result property="alpha023" column="alpha_023" />
+            <result property="alpha024" column="alpha_024" />
+            <result property="alpha025" column="alpha_025" />
+            <result property="alpha026" column="alpha_026" />
+            <result property="alpha027" column="alpha_027" />
+            <result property="alpha028" column="alpha_028" />
+            <result property="alpha029" column="alpha_029" />
+            <result property="alpha030" column="alpha_030" />
+            <result property="alpha031" column="alpha_031" />
+            <result property="alpha032" column="alpha_032" />
+            <result property="alpha033" column="alpha_033" />
+            <result property="alpha034" column="alpha_034" />
+            <result property="alpha035" column="alpha_035" />
+            <result property="alpha036" column="alpha_036" />
+            <result property="alpha037" column="alpha_037" />
+            <result property="alpha038" column="alpha_038" />
+            <result property="alpha039" column="alpha_039" />
+            <result property="alpha040" column="alpha_040" />
+            <result property="alpha041" column="alpha_041" />
+            <result property="alpha042" column="alpha_042" />
+            <result property="alpha043" column="alpha_043" />
+            <result property="alpha044" column="alpha_044" />
+            <result property="alpha045" column="alpha_045" />
+            <result property="alpha046" column="alpha_046" />
+            <result property="alpha047" column="alpha_047" />
+            <result property="alpha048" column="alpha_048" />
+            <result property="alpha049" column="alpha_049" />
+            <result property="alpha050" column="alpha_050" />
+            <result property="alpha051" column="alpha_051" />
+            <result property="alpha052" column="alpha_052" />
+            <result property="alpha053" column="alpha_053" />
+            <result property="alpha054" column="alpha_054" />
+            <result property="alpha055" column="alpha_055" />
+            <result property="alpha056" column="alpha_056" />
+            <result property="alpha057" column="alpha_057" />
+            <result property="alpha058" column="alpha_058" />
+            <result property="alpha059" column="alpha_059" />
+            <result property="alpha060" column="alpha_060" />
+            <result property="alpha061" column="alpha_061" />
+            <result property="alpha062" column="alpha_062" />
+            <result property="alpha063" column="alpha_063" />
+            <result property="alpha064" column="alpha_064" />
+            <result property="alpha065" column="alpha_065" />
+            <result property="alpha066" column="alpha_066" />
+            <result property="alpha067" column="alpha_067" />
+            <result property="alpha068" column="alpha_068" />
+            <result property="alpha069" column="alpha_069" />
+            <result property="alpha070" column="alpha_070" />
+            <result property="alpha071" column="alpha_071" />
+            <result property="alpha072" column="alpha_072" />
+            <result property="alpha073" column="alpha_073" />
+            <result property="alpha074" column="alpha_074" />
+            <result property="alpha075" column="alpha_075" />
+            <result property="alpha076" column="alpha_076" />
+            <result property="alpha077" column="alpha_077" />
+            <result property="alpha078" column="alpha_078" />
+            <result property="alpha079" column="alpha_079" />
+            <result property="alpha080" column="alpha_080" />
+            <result property="alpha081" column="alpha_081" />
+            <result property="alpha082" column="alpha_082" />
+            <result property="alpha083" column="alpha_083" />
+            <result property="alpha084" column="alpha_084" />
+            <result property="alpha085" column="alpha_085" />
+            <result property="alpha086" column="alpha_086" />
+            <result property="alpha087" column="alpha_087" />
+            <result property="alpha088" column="alpha_088" />
+            <result property="alpha089" column="alpha_089" />
+            <result property="alpha090" column="alpha_090" />
+            <result property="alpha091" column="alpha_091" />
+            <result property="alpha092" column="alpha_092" />
+            <result property="alpha093" column="alpha_093" />
+            <result property="alpha094" column="alpha_094" />
+            <result property="alpha095" column="alpha_095" />
+            <result property="alpha096" column="alpha_096" />
+            <result property="alpha097" column="alpha_097" />
+            <result property="alpha098" column="alpha_098" />
+            <result property="alpha099" column="alpha_099" />
+            <result property="alpha100" column="alpha_100" />
+            <result property="alpha101" column="alpha_101" />
+            <result property="alpha102" column="alpha_102" />
+            <result property="alpha103" column="alpha_103" />
+            <result property="alpha104" column="alpha_104" />
+            <result property="alpha105" column="alpha_105" />
+            <result property="alpha106" column="alpha_106" />
+            <result property="alpha107" column="alpha_107" />
+            <result property="alpha108" column="alpha_108" />
+            <result property="alpha109" column="alpha_109" />
+            <result property="alpha110" column="alpha_110" />
+            <result property="alpha111" column="alpha_111" />
+            <result property="alpha112" column="alpha_112" />
+            <result property="alpha113" column="alpha_113" />
+            <result property="alpha114" column="alpha_114" />
+            <result property="alpha115" column="alpha_115" />
+            <result property="alpha116" column="alpha_116" />
+            <result property="alpha117" column="alpha_117" />
+            <result property="alpha118" column="alpha_118" />
+            <result property="alpha119" column="alpha_119" />
+            <result property="alpha120" column="alpha_120" />
+            <result property="alpha121" column="alpha_121" />
+            <result property="alpha122" column="alpha_122" />
+            <result property="alpha123" column="alpha_123" />
+            <result property="alpha124" column="alpha_124" />
+            <result property="alpha125" column="alpha_125" />
+            <result property="alpha126" column="alpha_126" />
+            <result property="alpha127" column="alpha_127" />
+            <result property="alpha128" column="alpha_128" />
+            <result property="alpha129" column="alpha_129" />
+            <result property="alpha130" column="alpha_130" />
+            <result property="alpha131" column="alpha_131" />
+            <result property="alpha132" column="alpha_132" />
+            <result property="alpha133" column="alpha_133" />
+            <result property="alpha134" column="alpha_134" />
+            <result property="alpha135" column="alpha_135" />
+            <result property="alpha136" column="alpha_136" />
+            <result property="alpha137" column="alpha_137" />
+            <result property="alpha138" column="alpha_138" />
+            <result property="alpha139" column="alpha_139" />
+            <result property="alpha140" column="alpha_140" />
+            <result property="alpha141" column="alpha_141" />
+            <result property="alpha142" column="alpha_142" />
+            <result property="alpha143" column="alpha_143" />
+            <result property="alpha144" column="alpha_144" />
+            <result property="alpha145" column="alpha_145" />
+            <result property="alpha146" column="alpha_146" />
+            <result property="alpha147" column="alpha_147" />
+            <result property="alpha148" column="alpha_148" />
+            <result property="alpha149" column="alpha_149" />
+            <result property="alpha150" column="alpha_150" />
+            <result property="alpha151" column="alpha_151" />
+            <result property="alpha152" column="alpha_152" />
+            <result property="alpha153" column="alpha_153" />
+            <result property="alpha154" column="alpha_154" />
+            <result property="alpha155" column="alpha_155" />
+            <result property="alpha156" column="alpha_156" />
+            <result property="alpha157" column="alpha_157" />
+            <result property="alpha158" column="alpha_158" />
+            <result property="alpha159" column="alpha_159" />
+            <result property="alpha160" column="alpha_160" />
+            <result property="alpha161" column="alpha_161" />
+            <result property="alpha162" column="alpha_162" />
+            <result property="alpha163" column="alpha_163" />
+            <result property="alpha164" column="alpha_164" />
+            <result property="alpha165" column="alpha_165" />
+            <result property="alpha166" column="alpha_166" />
+            <result property="alpha167" column="alpha_167" />
+            <result property="alpha168" column="alpha_168" />
+            <result property="alpha169" column="alpha_169" />
+            <result property="alpha170" column="alpha_170" />
+            <result property="alpha171" column="alpha_171" />
+            <result property="alpha172" column="alpha_172" />
+            <result property="alpha173" column="alpha_173" />
+            <result property="alpha174" column="alpha_174" />
+            <result property="alpha175" column="alpha_175" />
+            <result property="alpha176" column="alpha_176" />
+            <result property="alpha177" column="alpha_177" />
+            <result property="alpha178" column="alpha_178" />
+            <result property="alpha179" column="alpha_179" />
+            <result property="alpha180" column="alpha_180" />
+            <result property="alpha181" column="alpha_181" />
+            <result property="alpha182" column="alpha_182" />
+            <result property="alpha183" column="alpha_183" />
+            <result property="alpha184" column="alpha_184" />
+            <result property="alpha185" column="alpha_185" />
+            <result property="alpha186" column="alpha_186" />
+            <result property="alpha187" column="alpha_187" />
+            <result property="alpha188" column="alpha_188" />
+            <result property="alpha189" column="alpha_189" />
+            <result property="alpha190" column="alpha_190" />
+            <result property="alpha191" column="alpha_191" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        stock_code,trade_date,alpha_001,alpha_002,alpha_003,alpha_004,
+        alpha_005,alpha_006,alpha_007,alpha_008,alpha_009,
+        alpha_010,alpha_011,alpha_012,alpha_013,alpha_014,
+        alpha_015,alpha_016,alpha_017,alpha_018,alpha_019,
+        alpha_020,alpha_021,alpha_022,alpha_023,alpha_024,
+        alpha_025,alpha_026,alpha_027,alpha_028,alpha_029,
+        alpha_030,alpha_031,alpha_032,alpha_033,alpha_034,
+        alpha_035,alpha_036,alpha_037,alpha_038,alpha_039,
+        alpha_040,alpha_041,alpha_042,alpha_043,alpha_044,
+        alpha_045,alpha_046,alpha_047,alpha_048,alpha_049,
+        alpha_050,alpha_051,alpha_052,alpha_053,alpha_054,
+        alpha_055,alpha_056,alpha_057,alpha_058,alpha_059,
+        alpha_060,alpha_061,alpha_062,alpha_063,alpha_064,
+        alpha_065,alpha_066,alpha_067,alpha_068,alpha_069,
+        alpha_070,alpha_071,alpha_072,alpha_073,alpha_074,
+        alpha_075,alpha_076,alpha_077,alpha_078,alpha_079,
+        alpha_080,alpha_081,alpha_082,alpha_083,alpha_084,
+        alpha_085,alpha_086,alpha_087,alpha_088,alpha_089,
+        alpha_090,alpha_091,alpha_092,alpha_093,alpha_094,
+        alpha_095,alpha_096,alpha_097,alpha_098,alpha_099,
+        alpha_100,alpha_101,alpha_102,alpha_103,alpha_104,
+        alpha_105,alpha_106,alpha_107,alpha_108,alpha_109,
+        alpha_110,alpha_111,alpha_112,alpha_113,alpha_114,
+        alpha_115,alpha_116,alpha_117,alpha_118,alpha_119,
+        alpha_120,alpha_121,alpha_122,alpha_123,alpha_124,
+        alpha_125,alpha_126,alpha_127,alpha_128,alpha_129,
+        alpha_130,alpha_131,alpha_132,alpha_133,alpha_134,
+        alpha_135,alpha_136,alpha_137,alpha_138,alpha_139,
+        alpha_140,alpha_141,alpha_142,alpha_143,alpha_144,
+        alpha_145,alpha_146,alpha_147,alpha_148,alpha_149,
+        alpha_150,alpha_151,alpha_152,alpha_153,alpha_154,
+        alpha_155,alpha_156,alpha_157,alpha_158,alpha_159,
+        alpha_160,alpha_161,alpha_162,alpha_163,alpha_164,
+        alpha_165,alpha_166,alpha_167,alpha_168,alpha_169,
+        alpha_170,alpha_171,alpha_172,alpha_173,alpha_174,
+        alpha_175,alpha_176,alpha_177,alpha_178,alpha_179,
+        alpha_180,alpha_181,alpha_182,alpha_183,alpha_184,
+        alpha_185,alpha_186,alpha_187,alpha_188,alpha_189,
+        alpha_190,alpha_191
+    </sql>
+</mapper>
