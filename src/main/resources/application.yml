@@ -1,0 +1,31 @@
+# 通用服务配置
+server:
+  port: 8003              # 服务端口
+  servlet:
+    context-path: /regulus   # 设置上下文路径
+
+spring:
+  application:
+    name: regulus
+  profiles:
+    include: secret  # 加载 application-secret.yml
+  flyway:
+    enabled: true                              # 启用 Flyway
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: info  # 日志级别
+
+thread-pool:
+  fixed:
+    core-size: 10
+    max-size: 20
+    queue-capacity: 1000
+  cached:
+    keep-alive-seconds: 60
+

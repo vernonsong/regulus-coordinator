@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.infrastructure.repository.mapper.MessageDailyDoMapper">
+
+    <resultMap id="BaseResultMap" type="com.regulus.infrastructure.persistence.MessageDailyDo">
+        <id property="id" column="article_id"/>
+        <result property="content" column="content"/>
+        <result property="imgPath" column="img_path"/>
+        <result property="tradeDate" column="trade_date"/>
+        <result property="sendPeriod" column="send_period"/>
+        <result property="source" column="source"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,content,imgPath,trade_date,send_period,source,
+        create_time,update_time
+    </sql>
+</mapper>
