@@ -79,6 +79,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.14.5</version>
+        </dependency>
+        <dependency>
             <groupId>net.i2p.crypto</groupId>
             <artifactId>eddsa</artifactId>
             <version>0.3.0</version>
@@ -146,6 +151,13 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
             <version>1.6.0.Beta1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.8.0</version>
+            <!-- 使用 5.x 版本 -->
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -264,8 +276,17 @@
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
-                            <goal>report</goal>
+                            <!-- 在测试阶段注入代码监控 -->
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-report</id>
+                        <!-- 绑定到 test 阶段 -->
+                        <goals>
+                            <goal>report</goal>
+                            <!-- 生成 HTML/XML 报告 -->
+                        </goals>
+                        <phase>test</phase>
                     </execution>
                 </executions>
             </plugin>
