@@ -10,10 +10,12 @@ package com.regulus.domain.core.ai.service;
 import com.regulus.domain.core.ai.repository.StrategyDailyRepository;
 import jakarta.annotation.Resource;
 import java.time.LocalDate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /** 每日策略类 */
 @Service
+@Slf4j
 public class StrategyDailyService {
     @Resource private AiService aiService;
 
@@ -23,6 +25,7 @@ public class StrategyDailyService {
     public void saveStrategyDaily() {
         LocalDate tradeDate = LocalDate.now();
         String content = aiService.getPreMarketStrategy(tradeDate);
+        log.info("盘前策略为:\n==={}===\n", content);
         strategyDailyRepository.saveStrategy(content, tradeDate);
     }
 }
