@@ -17,11 +17,15 @@ import jakarta.annotation.Resource;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /** Regulus AI服务 接口层实现 */
 @Service
+@Slf4j
 public class RegulusQuantService implements AiService {
+    private static final int RETRY_TIMES = 3;
+
     @Resource private ExternalOpenapiService externalOpenapiService;
 
     @Resource private HttpUtil httpUtil;
@@ -40,8 +44,14 @@ public class RegulusQuantService implements AiService {
         String apiUrl = externalOpenapiService.getApiUrl("Regulus", "pre_market_strategy");
         Map<String, Object> params = new HashMap<>();
         params.put("trade_date", tradeDate);
-
-        String result = httpUtil.post(apiUrl, null, JSON.toJSONString(params));
-        return JSONObject.parseObject(result).getString("content");
+        for (int i = 0; i < RETRY_TIMES; i++) {
+            try {
+                String result = httpUtil.post(apiUrl, null, JSON.toJSONString(params));
+                return JSONObject.parseObject(result).getString("content");
+            } catch (Exception e) {
+                log.error("请求盘前策略失败", e);
+            }
+        }
+        throw new RuntimeException("无法获取盘前策略");
     }
 }
