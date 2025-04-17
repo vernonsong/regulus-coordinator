@@ -7,6 +7,7 @@
 
 package com.regulus.infrastructure.repository;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.regulus.domain.core.ai.repository.StrategyDailyRepository;
 import com.regulus.infrastructure.persistence.StrategyDailyDo;
 import com.regulus.infrastructure.repository.mapper.StrategyDailyMapper;
@@ -22,9 +23,19 @@ public class DefaultStrategyDailyRepository implements StrategyDailyRepository {
     @Resource private StrategyDailyMapper strategyDailyDoMapper;
 
     @Override
-    public void saveStrategy(String content, LocalDate tradeDate) {
+    public void saveStrategyContent(String content, LocalDate tradeDate) {
         StrategyDailyDo strategyDailyDo = new StrategyDailyDo();
         strategyDailyDo.setContent(content);
+        strategyDailyDo.setTradeDate(
+                Date.from(tradeDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        strategyDailyDo.setUpdateTime(new Date());
+        strategyDailyDoMapper.updateById(strategyDailyDo);
+    }
+
+    @Override
+    public void saveStrategyScore(String score, LocalDate tradeDate) {
+        StrategyDailyDo strategyDailyDo = new StrategyDailyDo();
+        strategyDailyDo.setScore(score);
         strategyDailyDo.setTradeDate(
                 Date.from(tradeDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         strategyDailyDo.setCreateTime(new Date());
@@ -35,5 +46,12 @@ public class DefaultStrategyDailyRepository implements StrategyDailyRepository {
     @Override
     public String getStrategy(LocalDate tradeDate) {
         return strategyDailyDoMapper.queryStrategyByTradeDate(tradeDate);
+    }
+
+    @Override
+    public Boolean checkScore(LocalDate tradeDate) {
+        return strategyDailyDoMapper.selectCount(
+                        new LambdaQueryWrapper<StrategyDailyDo>().eq(StrategyDailyDo::getTradeDate, tradeDate))
+                > 0;
     }
 }
