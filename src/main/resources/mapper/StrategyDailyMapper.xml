@@ -7,11 +7,12 @@
     <resultMap id="BaseResultMap" type="com.regulus.infrastructure.persistence.StrategyDailyDo">
             <id property="tradeDate" column="trade_date" />
             <result property="content" column="content" />
+            <result property="score" column="score" />
             <result property="createTime" column="create_time" />
             <result property="updateTime" column="update_time" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        trade_date,content,create_time,update_time
+        trade_date,content,score,create_time,update_time
     </sql>
 </mapper>

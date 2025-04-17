@@ -20,10 +20,10 @@ public class StrategySchedule {
     @Resource private StrategyDailyService strategyDailyService;
 
     /** 保存每日策略 */
-    @Scheduled(cron = "0 45 09 * * ?")
+    @Scheduled(cron = "0 40 09 * * ?")
     public void saveStrategyDaily() {
         log.info("saveStrategyDaily 开始调度");
-        strategyDailyService.saveStrategyDaily();
+        strategyDailyService.saveStrategyContentDaily();
         log.info("saveStrategyDaily 完成调度");
     }
 }

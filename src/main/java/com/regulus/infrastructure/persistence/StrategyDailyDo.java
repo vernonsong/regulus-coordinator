@@ -18,6 +18,10 @@ public class StrategyDailyDo {
     @TableField(value = "content")
     private String content;
 
+    /** 策略打分 */
+    @TableField(value = "score")
+    private String score;
+
     /** 创建时间 */
     @TableField(value = "create_time")
     private Date createTime;

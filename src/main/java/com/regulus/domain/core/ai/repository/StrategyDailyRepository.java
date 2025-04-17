@@ -12,12 +12,20 @@ import java.time.LocalDate;
 /** 每日策略 仓储层接口 */
 public interface StrategyDailyRepository {
     /**
-     * 保存策略
+     * 保存策略正文
      *
      * @param content 策略正文
      * @param tradeDate 交易日期
      */
-    void saveStrategy(String content, LocalDate tradeDate);
+    void saveStrategyContent(String content, LocalDate tradeDate);
+
+    /**
+     * 保存策略打分
+     *
+     * @param score 策略打分
+     * @param tradeDate 交易日期
+     */
+    void saveStrategyScore(String score, LocalDate tradeDate);
 
     /**
      * 获取策略
@@ -26,4 +34,12 @@ public interface StrategyDailyRepository {
      * @return 策略信息
      */
     String getStrategy(LocalDate tradeDate);
+
+    /**
+     * 查看是否有打分
+     *
+     * @param tradeDate 交易日期
+     * @return 是否有策略打分
+     */
+    Boolean checkScore(LocalDate tradeDate);
 }
